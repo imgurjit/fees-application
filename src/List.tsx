@@ -134,6 +134,7 @@ function List() {
 
   const visibleRows = useMemo(
     () => stableSort(rows, getComparator(order, orderBy)),
+    // eslint-disable-next-line
     [order, orderBy]
   );
 
