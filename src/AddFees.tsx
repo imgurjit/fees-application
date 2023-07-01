@@ -24,14 +24,17 @@ const schema = object()
     feeStructureName: string().required("Fee Structure Name is required."),
     frequency: string().required("Frequency is required."),
     installment: number()
+      .typeError("Enter valid numerical value")
       .positive()
       .required("Installment is required.")
       .min(1, "Installment should be greater than 0"),
     amount: number()
+      .typeError("Enter valid numerical value")
       .positive()
       .required("Amount is required.")
       .min(1, "Amount should be greater than 0"),
     registerFee: number()
+      .typeError("Enter valid numerical value")
       .positive()
       .required("Register Fee is required.")
       .min(1, "Register Fee should be greater than 0"),
@@ -39,6 +42,7 @@ const schema = object()
       .min(1, "Select atleast 1 course.")
       .required("Course is required."),
     studentCount: number()
+      .typeError("Enter valid numerical value")
       .positive()
       .required("Student Count is required.")
       .min(1, "Student Count should be greater than 0")
